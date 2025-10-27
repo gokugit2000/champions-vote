@@ -34,9 +34,9 @@ const config: HardhatUserConfig = {
   },
   networks: {
     sepolia: {
-      mnemonic: [MNEMONIC],
+      accounts: [MNEMONIC],
       chainId: 11155111,
-      url: `https://sepolia.infura.io/v3/${INFURA_API_KEY}`,
+      url: `https://eth-sepolia.g.alchemy.com/v2/${INFURA_API_KEY}`,
     },
   },
   paths: {
