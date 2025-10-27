@@ -124,3 +124,8 @@
 .link:hover {
   opacity: 80%;
 }
+
+body {
+  background: linear-gradient(135deg, #1a1f3a 0%, #002266 100%);
+  color: #e0e7ff;
+}
