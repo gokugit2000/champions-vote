@@ -1,19 +1,39 @@
-# FHEVM React Template
+# FHE Champions League Vote
 
-A minimal React frontend template for building FHEVM-enabled decentralized applications (dApps). This template provides a simple development interface for interacting with FHEVM smart contracts, specifically the `FHECounter.sol` contract.
+A minimal Dapp for building FHEVM-enabled decentralized applications (dApps) to vote privately for your favorite UEFA Champions League club. This dapp demonstrates **privacy-preserving voting** using Fully Homomorphic Encryption (FHE).
 
 ## 🚀 What is FHEVM?
 
-FHEVM (Fully Homomorphic Encryption Virtual Machine) enables computation on encrypted data directly on Ethereum. This template demonstrates how to build dApps that can perform computations while keeping data private.
+FHEVM (Fully Homomorphic Encryption Virtual Machine) enables computation on encrypted data directly on Ethereum. Using FHE, you can **submit encrypted votes**, perform computations, and decrypt results privately — all without exposing sensitive information on-chain.
 
-## ✨ Features
+## 🏆 About `FHEChampionsVote`
 
-- **🔐 FHEVM Integration**: Built-in support for fully homomorphic encryption
-- **⚛️ React + Next.js**: Modern, performant frontend framework
-- **🎨 Tailwind CSS**: Utility-first styling for rapid UI development
-- **🔗 RainbowKit**: Seamless wallet connection and management
-- **🌐 Multi-Network Support**: Works on both Sepolia testnet and local Hardhat node
-- **📦 Monorepo Structure**: Organized packages for SDK, contracts, and frontend
+`FHEChampionsVote` is a smart contract that allows users to:
+
+- Submit an **encrypted vote** for their favorite club.
+- Update (revote) their choice anytime.
+- Keep votes **private** — only the user or the contract can decrypt the vote.
+- Track if a user has **ever voted**.
+
+### Features
+
+- **Privacy-preserving**: Votes are encrypted with FHE.
+- **Revoting enabled**: Users can update their vote at any time.
+- **Frontend-ready**: Easy integration with React + Wagmi + RainbowKit.
+- **User-specific decryption**: Only the voter can decrypt their own vote.
+
+### Clubs IDs
+
+| ID | Club Name              |
+|----|-----------------------|
+| 1  | Real Madrid           |
+| 2  | Manchester City       |
+| 3  | Bayern Munich         |
+| 4  | Liverpool             |
+| 5  | Paris Saint-Germain   |
+| 6  | Barcelona             |
+
+---
 
 ## 📋 Prerequinextjss
 
@@ -124,7 +144,7 @@ For more details, see the [MetaMask development guide](https://docs.metamask.io/
 This template uses a monorepo structure with three main packages:
 
 ```
-fhevm-react-template/
+champions-vote/
 ├── packages/
 │   ├── fhevm-hardhat-template/    # Smart contracts & deployment
 │   ├── fhevm-sdk/                 # FHEVM SDK package
@@ -134,8 +154,8 @@ fhevm-react-template/
 
 ### Key Components
 
-#### 🔗 FHEVM Integration (`packages/nextjs/hooks/fhecounter-example/`)
-- **`useFHECounterWagmi.tsx`**: Example hook demonstrating FHEVM contract interaction
+#### 🔗 FHEVM Integration (`packages/nextjs/hooks/`)
+- **`useFHEChampionsWagmi.ts`**: Example hook demonstrating FHEVM contract interaction
 - Essential hooks for FHEVM-enabled smart contract communication
 - Easily copyable to any FHEVM + React project
 
